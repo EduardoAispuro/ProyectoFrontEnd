@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programa de Mantenimiento Anual PMA - Demo</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Programa de Mantenimiento Anual PMA</div>
+    <nav class="topbar-nav">
+      <a href="#dashboard" class="nav-link active">Dashboard</a>
+      <a href="#equipos" class="nav-link">Equipos</a>
+      <a href="#departamentos" class="nav-link">Departamentos</a>
+      <a href="#mantenimiento" class="nav-link">Mantenimiento</a>
+      <a href="#practicantes" class="nav-link">Practicantes</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section id="dashboard" class="page-header">
+      <div>
+        <h1>Dashboard del Programa</h1>
+        <p>
+          Esta es una vista estática de ejemplo del Programa de Mantenimiento
+          Anual (PMA). Los datos son de prueba y buscan reflejar el
+          comportamiento del dashboard real.
+        </p>
+      </div>
+      <a href="#form-usuario" class="btn-primary">Acción principal</a>
+    </section>
+
+    <section class="cards-grid">
+      <article class="card">
+        <h2 class="card-title">Total de equipos</h2>
+        <p class="card-number">245</p>
+        <p class="card-caption">Inventario registrado en el sistema</p>
+      </article>
+      <article class="card">
+        <h2 class="card-title">Equipos óptimos</h2>
+        <p class="card-number positive">+132</p>
+        <p class="card-caption">Con score dentro de parámetros</p>
+      </article>
+      <article class="card">
+        <h2 class="card-title">Por cambiar pronto</h2>
+        <p class="card-number">64</p>
+        <p class="card-caption">Equipos en seguimiento de reemplazo</p>
+      </article>
+      <article class="card">
+        <h2 class="card-title">Obsoletos</h2>
+        <p class="card-number negative">18</p>
+        <p class="card-caption">Requieren acción inmediata</p>
+      </article>
+    </section>
+
+    <section id="equipos" class="content-grid">
+      <section class="panel">
+        <header class="panel-header">
+          <h2>Equipos registrados (demo)</h2>
+          <input class="input" type="search" placeholder="Buscar equipo..." />
+        </header>
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Equipo</th>
+                <th>Departamento</th>
+                <th>Estado</th>
+                <th>Prioridad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PC-001</td>
+                <td>Contabilidad</td>
+                <td>Activo</td>
+                <td><span class="badge badge-success">Óptimo</span></td>
+              </tr>
+              <tr>
+                <td>NB-023</td>
+                <td>Dirección</td>
+                <td>Activo</td>
+                <td><span class="badge badge-warning">Por cambiar</span></td>
+              </tr>
+              <tr>
+                <td>LAB-10</td>
+                <td>Laboratorio Redes</td>
+                <td>En mantenimiento</td>
+                <td><span class="badge badge-muted">En revisión</span></td>
+              </tr>
+              <tr>
+                <td>SRV-02</td>
+                <td>Centro de Datos</td>
+                <td>Activo</td>
+                <td><span class="badge badge-success">Crítico</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <header class="panel-header">
+          <h2>Registrar equipo (demo)</h2>
+        </header>
+        <form id="form-usuario" class="form">
+          <label class="field">
+            <span>Número de serie</span>
+            <input type="text" placeholder="Ej: PC-001" />
+          </label>
+          <label class="field">
+            <span>Departamento</span>
+            <input type="text" placeholder="Ej: Contabilidad" />
+          </label>
+          <label class="field">
+            <span>Tipo de equipo</span>
+            <select>
+              <option>Desktop PC</option>
+              <option>Laptop</option>
+              <option>Servidor</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Estado inicial</span>
+            <select>
+              <option>Activo</option>
+              <option>En mantenimiento</option>
+              <option>Obsoleto</option>
+            </select>
+          </label>
+
+          <button type="button" class="btn-secondary">
+            Guardar (solo demo)
+          </button>
+        </form>
+        <p class="muted">
+          Este formulario es solamente de ejemplo, no guarda información real ni
+          se conecta al backend de FastAPI.
+        </p>
+      </section>
+    </section>
+
+    <section id="departamentos" class="panel">
+      <header class="panel-header">
+        <h2>Departamentos y prioridad (demo)</h2>
+      </header>
+      <p class="muted">
+        Aquí se muestra una vista simplificada de los departamentos
+        organizados por prioridad Baja, Media y Alta. En la aplicación real
+        esta información se representa como un tablero interactivo.
+      </p>
+    </section>
+
+    <section id="mantenimiento" class="panel">
+      <header class="panel-header">
+        <h2>Control de mantenimiento (demo)</h2>
+      </header>
+      <p class="muted">
+        Esta sección resume los mantenimientos programados, completados y
+        pendientes por semana. En el PMA real se alimenta de los endpoints de
+        mantenimiento y muestra KPIs como cumplimiento semanal y avance anual.
+      </p>
+    </section>
+
+    <section id="practicantes" class="panel">
+      <header class="panel-header">
+        <h2>Practicantes (demo)</h2>
+      </header>
+      <p class="muted">
+        Aquí se mostrarán los practicantes disponibles, sus horarios de
+        disponibilidad y las asignaciones a mantenimientos. En el sistema real
+        se consume la API de practicantes del backend FastAPI.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Demo - Programa de Mantenimiento Anual PMA</span>
+    <span>Versión 0.1.0</span>
+  </footer>
+</body>
+</html>
